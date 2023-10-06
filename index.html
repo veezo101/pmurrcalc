@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./fb.ico">
+    <title>PMU RR Calculator</title>
+</head>
+
+<body class="dark-mode">
+    <div class="container mt-3">
+        <h2>PMU Recruitment Rate Calculator</h2>
+        <div id="lastUpdated"></div>
+
+        <div class="mt-1 mb-2 mx-3 top-right-container">
+            <div class="switch-label">
+                <label>Dark Mode 🌌</label>
+            </div>
+            <label class="switch">
+                <!-- Checked to start in dark mode -->
+                <input type="checkbox" id="darkModeSwitch" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="my-2">
+            <span class="sprite pmuwiki"></span>
+            <a href="https://pokemonmysteryuniverse.fandom.com/wiki/Recruitable_Pok%C3%A9mon#List_of_Recruitable_Pok%C3%A9mon"
+                target="_blank">Find Base Recruit Rate - Wiki</a>
+        </div>
+
+        <form id="rrForm" class="mt-2">
+            <!-- Base Rate input -->
+            <div class="form-group">
+                <label for="baseRR">Base Rate:</label>
+                <input type="number" class="form-control" id="baseRR" name="baseRR" step="0.01" value="0">
+            </div>
+
+            <!-- Explorer Rank input -->
+            <div class="form-group">
+                <label for="explorerRank">Explorer Rank:</label>
+                <select class="form-control" id="explorerRank" name="explorerRank">
+                    <option value="normal">Normal</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="super">Super</option>
+                    <option value="ultra">Ultra</option>
+                    <option value="hyper">Hyper</option>
+                    <option value="master">Master</option>
+                    <option value="master-star">Master*</option>
+                    <option value="master-double-star">Master**</option>
+                    <option value="master-triple-star">Master***</option>
+                    <option value="guildmaster">Guildmaster</option>
+                </select>
+            </div>
+
+            <!-- Active mon Level input -->
+            <div class="form-group">
+                <label for="level">Active Pokémon Level (1-100):</label>
+                <input type="number" class="form-control" id="level" name="level" min="1" max="100">
+            </div>
+
+            <!-- Held item -->
+            <div class="form-group">
+                <label>Held item:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heldItem" id="noheld" value="noheld" checked>
+                    <label class="form-check-label" for="noheld">
+                        <span class="sprite noheld"></span>None
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heldItem" id="soothe" value="soothe">
+                    <label class="form-check-label" for="soothe">
+                        <span class="sprite soothe"></span>Soothe Bell
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heldItem" id="affinity" value="affinity">
+                    <label class="form-check-label" for="affinity">
+                        <span class="sprite affinity"></span>Affinity Pendant
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heldItem" id="amber" value="amber">
+                    <label class="form-check-label" for="amber">
+                        <span class="sprite amber"></span>Amber Tear
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="heldItem" id="gm" value="gm">
+                    <label class="form-check-label" for="gm">
+                        <span class="sprite gm"></span>Golden Mask
+                    </label>
+                </div>
+            </div>
+
+            <!-- Team item -->
+            <div class="form-group">
+                <label>Team item:</label><br>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="fb" name="fb">
+                    <label class="form-check-label" for="fb">
+                        <span class="sprite fb"></span>Friend Bow</label>
+                </div>
+            </div>
+
+            <!-- Consumable item -->
+            <div class="form-group">
+                <label>Consumable item:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inviting" id="nonhc" value="nonhc" checked>
+                    <label class="form-check-label" for="nonhc">
+                        <span class="sprite nonhc"></span>Non HC
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inviting" id="invitingnormal" value="invitingnormal">
+                    <label class="form-check-label" for="invitingnormal">
+                        <span class="sprite invitingnormal"></span>Inviting Orb
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inviting" id="invitingshiny" value="invitingshiny">
+                    <label class="form-check-label" for="invitingshiny">
+                        <span class="sprite invitingshiny"></span>Inviting Orb vs <span style="color: gold;">Shiny</span>
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" id="gift" name="gift">
+                    <label class="form-check-label" for="gift">
+                        <span class="sprite gift"></span>Gift</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="calculateButton">Calculate Total Points</button>
+        </form>
+        <div class="my-3">
+            <div id="totalRR"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

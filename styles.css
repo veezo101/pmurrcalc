@@ -1,0 +1,171 @@
+/* styles.css */
+
+h2 {
+    margin-top: 0 !important;
+}
+
+.dark-mode a {
+    color:#2196F3;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.sprite.pmuwiki {
+    display: inline-block;
+    width: 21px;
+    height: 16px;
+    background-image: url('./assets/img/pmuwiki.png'); /*Path to sprite image*/
+    background-size: cover;
+    margin-right: 5px; /*Spacing between sprite and label*/
+}
+
+.sprite.soothe {
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    background-image: url('./assets/img/soothe.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.affinity {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('./assets/img/affinity.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.amber {
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background-image: url('./assets/img/amber.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.gm {
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background-image: url('./assets/img/gm.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.fb {
+    display: inline-block;
+    width: 21px;
+    height: 16px;
+    background-image: url('./assets/img/fb.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.invitingnormal {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('./assets/img/invitingnormal.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.invitingshiny {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('./assets/img/invitingshiny.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.sprite.gift {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/img/gift.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10px;
+}
+
+.form-control {
+    background-color: #fff; /* Background color for input fields and dropdowns in light mode */
+    color: #333; /* Text color in light mode */
+}
+
+/* Styles for input fields and dropdowns in dark mode */
+
+.top-right-container {
+    position: absolute;
+    top: 50px; /* Adjust the top distance as needed */
+    right: 10px; /* Adjust the right distance as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.dark-mode .form-control {
+    background-color: #333; /* Background color for input fields and dropdowns in dark mode */
+    color: #fff; /* Text color in dark mode */
+    width: 70%;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
