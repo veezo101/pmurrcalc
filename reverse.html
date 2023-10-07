@@ -21,14 +21,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="./reverse">Reverse Calculator</a>
+                <a class="nav-item nav-link" href="./">Home</a>
+                <a class="nav-item nav-link active" href="#">Reverse Calculator <span
+                        class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="./data">Data</a>
             </div>
         </div>
     </nav>
     <div class="container mt-3">
-        <h2>PMU Recruitment Rate Calculator</h2>
+        <h2>Base RR Reverse Calculator</h2>
         <div id="lastUpdated"></div>
 
         <div class="mt-1 mb-2 mx-3 top-right-container">
@@ -43,42 +44,40 @@
         </div>
 
         <div class="my-2">
-            <span class="sprite pmuwiki"></span>
-            <a href="https://pokemonmysteryuniverse.fandom.com/wiki/Recruitable_Pok%C3%A9mon#List_of_Recruitable_Pok%C3%A9mon"
-                target="_blank">List of Base Recruit Rates - Wiki</a>
+            🔁 Enter conditions to reverse calculate base RR!
         </div>
 
         <form id="rrForm" class="mt-2">
-            <!-- Base Rate input -->
+            <!-- Total Rate input -->
             <div class="form-group">
-                <label for="baseRR">Base Rate:</label>
-                <input type="number" class="form-control" id="baseRR" name="baseRR" step="0.01" value="0">
+                <label for="totalRR">Visible Recruit Rate:</label>
+                <input type="number" class="form-control" id="totalRR" name="totalRR" step="0.01">
             </div>
 
             <!-- Explorer Rank input -->
             <div class="form-group">
                 <label for="explorerRank">Explorer Rank:</label>
                 <select class="form-control" id="explorerRank" name="explorerRank">
-                    <option value="normal">Normal</option>
-                    <option value="bronze">Bronze</option>
-                    <option value="silver">Silver</option>
-                    <option value="gold">Gold</option>
-                    <option value="diamond">Diamond</option>
-                    <option value="super">Super</option>
-                    <option value="ultra">Ultra</option>
-                    <option value="hyper">Hyper</option>
-                    <option value="master">Master</option>
-                    <option value="master-star">Master*</option>
-                    <option value="master-double-star">Master**</option>
-                    <option value="master-triple-star">Master***</option>
                     <option value="guildmaster">Guildmaster</option>
+                    <option value="master-triple-star">Master***</option>
+                    <option value="master-double-star">Master**</option>
+                    <option value="master-star">Master*</option>
+                    <option value="master">Master</option>
+                    <option value="hyper">Hyper</option>
+                    <option value="ultra">Ultra</option>
+                    <option value="super">Super</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="normal">Normal</option>
                 </select>
             </div>
 
             <!-- Active mon Level input -->
             <div class="form-group">
                 <label for="level">Active Pokémon Level (1-100):</label>
-                <input type="number" class="form-control" id="level" name="level" min="1" max="100">
+                <input type="number" class="form-control" id="level" name="level" min="1" max="100" value="100">
             </div>
 
             <!-- Held item -->
@@ -150,16 +149,11 @@
                             style="color: gold;">Shiny*</span>
                     </label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input type="checkbox" class="form-check-input" id="gift" name="gift">
-                    <label class="form-check-label" for="gift">
-                        <span class="sprite gift"></span>Gift</label>
-                </div>
             </div>
-            <button type="button" class="btn btn-primary" id="calculateButton">Calculate Total RR</button>
+            <button type="button" class="btn btn-primary" id="revCalculateButton">Calculate Base RR</button>
         </form>
         <div class="my-3">
-            <div id="totalRR"></div>
+            <div id="baseRR"></div>
         </div>
     </div>
 
