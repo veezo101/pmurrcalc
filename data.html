@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./fb.ico">
+    <title>PMU RR Calculator</title>
+</head>
+
+<body class="dark-mode">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./">
+            <img src="./assets/img/fb.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            RR Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./">Home</a>
+                <a class="nav-item nav-link" href="./reverse">Reverse Calculator</a>
+                <a class="nav-item nav-link active" href="#">Data <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <h2>Data used in the Calculations</h2>
+        <div id="lastUpdated"></div>
+
+        <div class="mt-1 mb-2 mx-3 top-right-container">
+            <div class="switch-label">
+                <label>Dark Mode 🌌</label>
+            </div>
+            <label class="switch">
+                <!-- Checked to start in dark mode -->
+                <input type="checkbox" id="darkModeSwitch" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="my-2">
+            <ul style="list-style-type: square;">
+                <li>
+                    Levels = +(level*0.1)%
+                </li>
+                <li>
+                    Held Items
+                    <ul style="list-style-type: disc;">
+                        <li>None = +0%</li>
+                        <li>Soothe Bell = +1%</li>
+                        <li>Affinity Pendant = +10%</li>
+                        <li>Amber Tear = +17%</li>
+                        <li>Golden Mask = +24%</li>
+                    </ul>
+                </li>
+                <li>
+                    Team Items
+                    <ul style="list-style-type: disc;">
+                        <li>None = +0%</li>
+                        <li>Friend Bow = +10%</li>
+                    </ul>
+                </li>
+                <li>
+                    Consumable Items
+                    <ul style="list-style-type: disc;">
+                        <li>None = +0%</li>
+                        <li>Inviting Orb (vs Non-Shiny) = +25%</li>
+                        <li>Inviting Orb (vs Shiny) = +35%</li>
+                        <li>Pokemon Gift = BaseRR.isPositive?"Guaranteed":+0%</li>
+                    </ul>
+                </li>
+                <li>Explorer Rank
+                    <ul style="list-style-type: disc;">
+                        <li>Normal = +0%</li>
+                        <li>Bronze = +2%</li>
+                        <li>Silver = +4.5%</li>
+                        <li>Gold = +7.5%</li>
+                        <li>Diamond = +9%</li>
+                        <li>Super = +9.5%</li>
+                        <li>Ultra = +10%</li>
+                        <li>Hyper = +10.5%</li>
+                        <li>Master = +11%</li>
+                        <li>Master* = +11.5%</li>
+                        <li>Master** = +12%</li>
+                        <li>Master*** = +13%</li>
+                        <li>Guildmaster = +15%</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
