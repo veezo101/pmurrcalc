@@ -114,6 +114,9 @@ document.getElementById("calculateButton").addEventListener("click", function ()
             // Nothing happens
         }
     }
+    if (totalRR) {
+        document.getElementById("totalRR").scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the element
+    }
 });
 document.getElementById("darkModeSwitch").addEventListener("change", function () {
     document.body.classList.toggle("dark-mode");
