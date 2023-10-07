@@ -103,6 +103,7 @@ h2 {
 .form-control {
     background-color: #fff; /* Background color for input fields and dropdowns in light mode */
     color: #333; /* Text color in light mode */
+    width: 70%;
 }
 
 /* Styles for input fields and dropdowns in dark mode */
