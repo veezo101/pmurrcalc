@@ -1,3 +1,7 @@
+# Ignore source map files
+*css.map
+*js.map
+
 # Compiled source #
 ###################
 *.com
