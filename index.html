@@ -11,6 +11,22 @@
 </head>
 
 <body class="dark-mode">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/fb.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            RR Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Reverse Calculator</a>
+                <a class="nav-item nav-link" href="#">Assumptions</a>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-3">
         <h2>PMU Recruitment Rate Calculator</h2>
         <div id="lastUpdated"></div>
@@ -120,15 +136,18 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inviting" id="invitingnormal" value="invitingnormal">
+                    <input class="form-check-input" type="radio" name="inviting" id="invitingnormal"
+                        value="invitingnormal">
                     <label class="form-check-label" for="invitingnormal">
                         <span class="sprite invitingnormal"></span>Inviting Orb
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inviting" id="invitingshiny" value="invitingshiny">
+                    <input class="form-check-input" type="radio" name="inviting" id="invitingshiny"
+                        value="invitingshiny">
                     <label class="form-check-label" for="invitingshiny">
-                        <span class="sprite invitingshiny"></span>Inviting Orb vs <span style="color: gold;">Shiny</span>
+                        <span class="sprite invitingshiny"></span>Inviting Orb vs <span
+                            style="color: gold;">Shiny</span>
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -145,7 +164,9 @@
     </div>
 
     <script src="script.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

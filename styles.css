@@ -127,6 +127,10 @@ body.dark-mode {
     color: #fff;
 }
 
+.bg-dark{
+    background-color: #242424 !important; /* For navbar */
+}
+
 .switch input { 
     opacity: 0;
     width: 0;
