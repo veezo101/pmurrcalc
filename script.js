@@ -8,13 +8,23 @@ if (calculateButton) {
         console.log("Calc button pressed!");
 
         var baseRRInput = document.getElementById("baseRR");
-        var baseRR = parseFloat(baseRRInput.value) || 0;
+        var baseRR = parseFloat(baseRRInput.value);
+        if (isNaN(baseRR)) {
+            event.preventDefault(); // Prevent form submission
+            alert("Please enter a valid base RR!");
+            // Reset any previous value
+            document.getElementById("totalRR").innerHTML = "";
+            return;
+        }
+
 
         var explorerRank = document.getElementById("explorerRank").value;
         var levelEntered = parseInt(document.getElementById("level").value);
         if (levelEntered < 1 || levelEntered > 100 || levelEntered == "" || isNaN(levelEntered)) {
             event.preventDefault(); // Prevent form submission
             alert("Please enter a level between 1 and 100.");
+            // Reset any previous value
+            document.getElementById("totalRR").innerHTML = "";
             return;
         }
 
@@ -134,13 +144,22 @@ if (revCalculateButton) {
         console.log("Rev Calc button pressed!");
 
         var totalRR = document.getElementById("totalRR");
-        var totalRR = parseFloat(totalRR.value) || 0;
+        var totalRR = parseFloat(totalRR.value);
+        if (isNaN(totalRR)) {
+            event.preventDefault(); // Prevent form submission
+            alert("Please enter a valid visible (total) RR!");
+            // Reset any previous value
+            document.getElementById("baseRR").innerHTML = "";
+            return;
+        }
 
         var explorerRank = document.getElementById("explorerRank").value;
         var levelEntered = parseInt(document.getElementById("level").value);
         if (levelEntered < 1 || levelEntered > 100 || levelEntered == "" || isNaN(levelEntered)) {
             event.preventDefault(); // Prevent form submission
             alert("Please enter a level between 1 and 100.");
+            // Reset any previous value
+            document.getElementById("baseRR").innerHTML = "";
             return;
         }
 
