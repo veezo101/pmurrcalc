@@ -8,8 +8,9 @@ if (calculateButton) {
         console.log("Calc button pressed!");
 
         var baseRRInput = document.getElementById("baseRR");
-        var baseRR = parseFloat(baseRRInput.value);
-        if (isNaN(baseRR)) {
+        var baseRR = Number(baseRRInput.value);
+        //check for edge case when Number(whitespace) is parsed as 0
+        if (baseRRInput.value.trim()=="" || isNaN(baseRR)) {
             event.preventDefault(); // Prevent form submission
             alert("Please enter a valid base RR!");
             // Reset any previous value
@@ -143,9 +144,10 @@ if (revCalculateButton) {
 
         console.log("Rev Calc button pressed!");
 
-        var totalRR = document.getElementById("totalRR");
-        var totalRR = parseFloat(totalRR.value);
-        if (isNaN(totalRR)) {
+        var totalRRInput = document.getElementById("totalRR");
+        var totalRR = Number(totalRRInput.value);
+        //check for edge case when Number(whitespace) is parsed as 0
+        if (totalRRInput.value.trim()=="" || isNaN(totalRR)) {
             event.preventDefault(); // Prevent form submission
             alert("Please enter a valid visible (total) RR!");
             // Reset any previous value
